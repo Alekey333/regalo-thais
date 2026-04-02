@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para mi Loquita 🌹</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="audio-fondo" src="musica/fondo.mp3" loop></audio>
+    <audio id="audio-17" src="musica/17_anos.mp3"></audio>
+    <audio id="audio-20" src="musica/20_rosas.mp3"></audio>
+
+    <div id="pantalla-inicio">
+        <div class="rose-icon">🌹</div>
+        <h1>Hola, Loquita...</h1>
+        <p class="instruccion">Toca el boton</p>
+        <button id="btn-abrir">Abrir Sorpresa ✨</button>
+    </div>
+
+    <div id="contenido-principal" class="oculto">
+        
+        <div id="stars-container"></div>
+        <div id="music-notes"></div>
+
+        <header class="header">
+            <h1 class="title">¡Felices 17!</h1>
+            <h2 class="subtitle">Un pequeño detalle para la chica con la mejor vibra de todas.</h2>
+        </header>
+
+        <section class="carta-section">
+            <p>Hola, Thais.</p>
+            <p>Quería dejarte este pequeño detalle para arrancar tu día. Ayer cuando te vi y te di las flores, me encantó ver tu cara y jeje me hace muy feliz q te haya gustado, por q si tu eres feliz yo tambien lo soy. Ya sabes cómo funciona esto, las reglas son las reglas: <strong>en todos los abriles te llevare 20 rosas.</strong></p>
+            
+            <div class="interactive-music-box">
+                <p><em>(Momento de ponerle soundtrack a esto... toca el botón suavemente)</em></p>
+                <button class="music-btn" id="btn-play-20">🌹 Activar "20 Rosas" 🌹</button>
+            <button class="music-btn btn-clasico" id="btn-play-fondo">🥀 Volver a modo chill</button>
+            </div>
+
+            <p>Quería recordarte hoy que tienes una vibra increíble. Tienes esa mezcla rara pero genial, medio Van Gogh, medio Beethoven, que hace que cualquier rato compartiendo locuras contigo valga la pena.</p>
+            
+            <p>Sigue siendo 100% tú, no le bajes el volumen a tu forma de ser. Me encanta que no te importe el qué dirán y admiro esa autenticidad que tienes. Sé perfectamente en qué punto estás y me parece genial; solo quería que sepas hoy lo especial que eres para mí.</p>
+            
+            <div class="interactive-music-box">
+                <p><em>(Ya fue mucha calma, cambia el ritmo...)</em></p>
+                <button class="music-btn" id="btn-play-17">💃 Activar "17 Años" 💃</button>
+                <button class="music-btn btn-clasico" id="btn-play-fondo">🥀 Volver a modo chill</button>
+            </div>
+            
+            <p>Espero que hoy tengas un día brutal. Haz mil locuras, disfruta muchísimo y pásala increíble. </p>
+            <p class="firma">Con cariño,<br>Alejandro</p>
+        </section>
+
+        <section class="fotos-section">
+            <h2 class="section-title">Galería: "Thais y sus vibras"</h2>
+            
+            <div class="foto-card">
+                <div class="marco-polaroid">
+                    <img src="fotos/1.png" alt="Thais Elegante">
+                </div>
+                <div class="frase-box">
+                    <p class="frase-orig">"L'élégance est la seule beauté qui ne se fane jamais."</p>
+                    <p class="frase-trad oculto">"La elegancia es la única belleza que nunca se marchita." <br><br><em>(Se que nunca te lo dije directmente, pero te ves demasiado hermosa y elegante vestida asi ).</em></p>
+                    <button class="btn-trad">Traducir 🪄</button>
+                </div>
+            </div>
+
+            <div class="foto-card">
+                <div class="marco-polaroid">
+                    <img src="fotos/2.png" alt="Thais Sonriente">
+                </div>
+                <div class="frase-box">
+                    <p class="frase-orig">""Le sourire est le baiser de l'âme."</p>
+                    <p class="frase-trad oculto">"La sonrisa es el beso del alma." <br><br><em>(Y la tuya es la mas bella de todas).</em></p>
+                    <button class="btn-trad">Traducir 🪄</button>
+                </div>
+            </div>
+
+            <div class="foto-card">
+                <div class="marco-polaroid">
+                    <img src="fotos/3.png" alt="Thais Rockera">
+                </div>
+                <div class="frase-box">
+                    <p class="frase-orig">"La vraie folie est de ne pas oser être soi-même."</p>
+                    <p class="frase-trad oculto">"La verdadera locura es no atreverse a ser uno mismo." <br><br><em>(Por eso me encantas, porque de loca tienes todo y de copia no tienes nada, siepre autentia y unica, por eso para mi eres UNICA)"</em></p>
+                    <button class="btn-trad">Traducir 🪄</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Feliz cumpleaños. Pásala brutal y no te arrepientas de nada solo disfruta y recuerda que es tu dia, TQM . 💜💛🖤</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
