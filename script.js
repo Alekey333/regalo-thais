@@ -1,4 +1,3 @@
-// --- Control de Pantalla Inicial y Audio de Fondo ---
 const pantallaInicio = document.getElementById('pantalla-inicio');
 const contenidoPrincipal = document.getElementById('contenido-principal');
 const btnAbrir = document.getElementById('btn-abrir');
@@ -7,17 +6,14 @@ const audioFondo = document.getElementById('audio-fondo');
 const audio17 = document.getElementById('audio-17');
 const audio20 = document.getElementById('audio-20');
 
-// Variables para el Crossfade (Transición suave estilo DJ)
 let currentAudio = audioFondo;
 let isFading = false;
 
 btnAbrir.addEventListener('click', () => {
-    // Inicia el ambiente con La Bella y la Bestia
     audioFondo.volume = 0.5;
     audioFondo.play().catch(e => console.log("Interacción requerida para audio", e));
     currentAudio = audioFondo;
     
-    // Animación de salida de la pantalla de bienvenida
     pantallaInicio.style.transform = 'translateY(-100vh)';
     pantallaInicio.style.opacity = '0';
     
@@ -27,14 +23,12 @@ btnAbrir.addEventListener('click', () => {
     }, 800);
 });
 
-// --- Función de Transición de Audio (Fade Out / Fade In) ---
 function cambiarMusicaSuave(nuevoAudio, tiempoInicio = 0) {
     if (currentAudio === nuevoAudio || isFading) return; 
     isFading = true;
 
     let volOut = currentAudio.volume;
     
-    // 1. Desvanecer la canción actual
     let fadeOut = setInterval(() => {
         if (volOut > 0.05) {
             volOut -= 0.05;
@@ -43,7 +37,6 @@ function cambiarMusicaSuave(nuevoAudio, tiempoInicio = 0) {
             clearInterval(fadeOut);
             currentAudio.pause();
 
-            // 2. Preparar y entrar con la nueva canción
             nuevoAudio.currentTime = tiempoInicio;
             nuevoAudio.volume = 0;
             nuevoAudio.play().catch(e => console.log(e));
@@ -63,37 +56,30 @@ function cambiarMusicaSuave(nuevoAudio, tiempoInicio = 0) {
     }, 40); 
 }
 
-// --- Controladores de los Botones Musicales ---
 const btnPlay17 = document.getElementById('btn-play-17');
 const btnPlay20 = document.getElementById('btn-play-20');
 const btnPlayFondo = document.getElementById('btn-play-fondo');
-const btnReturnFondo = document.querySelector('.btn-return-fondo'); // Selecciona por CLASE
+const btnReturnFondo = document.querySelector('.btn-return-fondo');
 
 btnPlay20.addEventListener('click', () => {
-    // Inicia en el coro de "20 Rosas" (aprox 64s)
     cambiarMusicaSuave(audio20, 64);
 });
 
 btnPlay17.addEventListener('click', () => {
-    // Inicia en el ritmo principal de "17 Años" (aprox 45s)
     cambiarMusicaSuave(audio17, 45);
 });
 
-// Evento para el PRIMER botón (por ID)
 btnPlayFondo.addEventListener('click', () => {
     cambiarMusicaSuave(audioFondo, audioFondo.currentTime); 
 });
 
-// Evento para el SEGUNDO botón (por CLASE)
 if(btnReturnFondo) {
     btnReturnFondo.addEventListener('click', () => {
         cambiarMusicaSuave(audioFondo, audioFondo.currentTime); 
     });
 }
 
-// --- Lógica del Traductor de Frases ---
 const botonesTraducir = document.querySelectorAll('.btn-trad');
-
 botonesTraducir.forEach(boton => {
     boton.addEventListener('click', function() {
         const cajaFrase = this.parentElement;
@@ -118,7 +104,6 @@ botonesTraducir.forEach(boton => {
     });
 });
 
-// --- Generador de Estrellas (Fondo Dinámico) ---
 const starsContainer = document.getElementById('stars-container');
 if(starsContainer) {
     for (let i = 0; i < 60; i++) { 
